@@ -19,6 +19,7 @@ function e($dirty) {
 
         <link rel="shortcut icon" href="static/img/favicon.ico">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/jasny-bootstrap.min.css">
         <link rel="stylesheet" href="static/css/font-awesome.min.css">
         <link rel="stylesheet" href="static/css/prettify.css">
         <link rel="stylesheet" href="static/css/codemirror.css">
@@ -32,6 +33,7 @@ function e($dirty) {
         <?php endif; ?>
 
         <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/jasny-bootstrap.min.js"></script>
         <script src="static/js/prettify.js"></script>
         <script src="static/js/codemirror.min.js"></script>
     </head>
@@ -43,22 +45,31 @@ function e($dirty) {
                 <div class="bubble">Remember to check for updates!</div>
             </a>
         <?php endif; ?>
-        <div class="inner">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div id="sidebar">
-                            <div class="inner">
-                                <h2><span><?php echo e(APP_NAME) ?></span></h2>
-                                <?php include('tree.php') ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div id="content">
-                            <div class="inner">
-                                <?php echo $content; ?>
-                            </div>
+
+        <div class="navmenu navmenu-default navmenu-fixed-left">
+            <div id="sidebar">
+                <div class="inner">
+                    <h2><?php echo e(APP_NAME) ?></h2>
+                    <?php include('tree.php') ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-default navbar-fixed-top hidden-lg hidden-md">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h2 href="#" class="navbar-brand"><?php echo e(APP_NAME) ?></h2>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="content">
+                        <div class="inner">
+                            <?php echo $content; ?>
                         </div>
                     </div>
                 </div>

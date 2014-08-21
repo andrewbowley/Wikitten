@@ -1,5 +1,59 @@
+/* Jasny Off-canvas styling  */
+html, body {
+  height: 100%;
+}
+
 body {
-    background: #EBEEF1 url(../img/noise.png);
+  /*padding: 50px 0 0 0;*/
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+@media (max-width: 991px) {
+    #main {
+        margin-top: 50px;
+        margin-left: 0px;
+    }
+    .navmenu {
+        display: none;
+    }
+    .navmenu.in {
+        display: block;
+    }
+}
+
+
+/* Wikitten styling  */
+body {
+    /*background: #EBEEF1 url(../img/noise.png);*/
     font-size: 13px;
 }
 .clear {
@@ -22,15 +76,10 @@ a, a:focus {
     padding: 20px 0;
 }
 #content {
-    border-radius: 4px;
     padding: 3px;
-    background-color: #C1CFDC;
 }
 #content .inner {
-    background: white;
     padding: 20px;
-    border-radius: 4px;
-    border: 1px solid #BBB;
 }
 .CodeMirror {
     height: auto;
@@ -68,32 +117,21 @@ form {
 }
 #sidebar {
     padding: 3px;
-    background-color: #C1CFDC;
-    text-shadow: 0 1px 0 #FFFFFF;
-    border-radius: 4px;
     margin-bottom: 5px;
 }
 #sidebar .inner {
     padding: 20px;
-    border: 1px solid #BBB;
-    background-color: #EFF2F4;
-    border-radius: 4px;
 }
-#sidebar h2, .breadcrumbs {
+.breadcrumbs {
     line-height: 20px;
-    background: #7B848C;
-    margin: -21px -21px 20px -21px;
-    padding: 0 20px;
+    /*margin: -21px -21px 20px -21px;*/
+    margin-bottom: 20px;
+    /*padding: 0 20px;*/
     line-height: 30px;
-    border: 1px solid #666;
-    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #666;
 }
-#sidebar h2 span {
-    border-radius: 4px 4px 0 0;
-    background: #EFF2F4;
-    font-size: 15px;
-    line-height: 18px;
-    padding: 5px 10px;
+#sidebar h2 {
+    margin-top: 0;
 }
 #sidebar ul {
     margin-bottom: 0;
@@ -139,15 +177,12 @@ form {
 .breadcrumbs li {
     float: left;
     line-height: 30px;
-    color: white;
 }
 .breadcrumbs li a {
-    color: white;
     margin-right: 15px;
 }
 .breadcrumbs li a:hover {
-    text-decoration: none;
-    text-shadow: 0 0 3px #656565;
+    text-decoration: underline;
 }
 .breadcrumbs .btn {
     margin-top: -3px;
