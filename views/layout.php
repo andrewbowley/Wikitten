@@ -39,12 +39,6 @@ function e($dirty) {
     </head>
 <body>
     <div id="main">
-        <?php if(USE_WIKITTEN_LOGO): ?>
-            <a href="http://wikitten.vizuina.com" id="logo" target="_blank" class="hidden-phone">
-                <img src="static/img/logo.png" alt="">
-                <div class="bubble">Remember to check for updates!</div>
-            </a>
-        <?php endif; ?>
 
         <div class="navmenu navmenu-default navmenu-fixed-left">
             <div id="sidebar">
