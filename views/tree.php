@@ -6,14 +6,14 @@ function tree($array, $parent, $parts = array(), $step = 0) {
     }
 
     $tid = ($step == 0) ? 'id="tree"' : '';
-    $t = '<ul class="unstyled" '.$tid.'>';
+    $t = '<ul class="list-unstyled" '.$tid.'>';
 
     foreach ($array as $key => $item) {
         if (is_array($item)) {
             $open = $step !== false && (isset($parts[$step]) && $key == $parts[$step]);
 
             $t .= '<li class="directory'. ($open ? ' open' : '') .'">';
-                $t .= '<a href="#" data-role="directory"><i class="icon icon-folder-'. ($open ? 'open' : 'close') .'"></i> ' . $key . '</a>';
+                $t .= '<a href="#" data-role="directory"><i class="fa fa-folder'. ($open ? '-open' : '') .'"></i> ' . $key . '</a>';
                 $t .= tree($item, "$parent/$key", $parts, $open ? $step + 1 : false);
             $t .=  '</li>';
         } else {
@@ -29,10 +29,10 @@ function tree($array, $parent, $parts = array(), $step = 0) {
 ?>
 
 <div id="tree-filter">
-    <input type="text" id="tree-filter-query" placeholder="Search file &amp; directory names.">
-    <a id="tree-filter-clear-query" title="Clear current search..."><i class="icon-remove"></i></a>
+    <input type="text" id="tree-filter-query" class="form-control" placeholder="Search file &amp; directory names.">
+    <a id="tree-filter-clear-query" title="Clear current search..."><i class="fa fa-times"></i></a>
 </div>
-<ul class="unstyled" id="tree-filter-results"></ul>
+<ul class="list-unstyled" id="tree-filter-results"></ul>
 
 <?php echo tree($this->_getTree(), BASE_URL, isset($parts) ? $parts : array()); ?>
 
@@ -45,8 +45,8 @@ function tree($array, $parent, $parts = array(), $step = 0) {
     };
 
     $(document).ready(function() {
-        var iconFolderOpenClass  = 'icon-folder-open',
-            iconFolderCloseClass = 'icon-folder-close',
+        var iconFolderOpenClass  = 'fa-folder-open',
+            iconFolderCloseClass = 'fa-folder',
 
             // Handle live search/filtering:
             tree             = $('#tree'),
@@ -113,7 +113,7 @@ function tree($array, $parent, $parts = array(), $step = 0) {
         $(document).on('click', '#sidebar a[data-role="directory"]', function (event) {
             event.preventDefault();
 
-            var icon = $(this).children('.icon');
+            var icon = $(this).children('.fa');
             var open = icon.hasClass(iconFolderOpenClass);
             var subtree = $(this).siblings('ul')[0];
 

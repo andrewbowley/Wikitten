@@ -19,6 +19,7 @@ function e($dirty) {
 
         <link rel="shortcut icon" href="static/img/favicon.ico">
         <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/font-awesome.min.css">
         <link rel="stylesheet" href="static/css/prettify.css">
         <link rel="stylesheet" href="static/css/codemirror.css">
         <link rel="stylesheet" href="static/css/main.css">
@@ -44,8 +45,8 @@ function e($dirty) {
         <?php endif; ?>
         <div class="inner">
             <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span3">
+                <div class="row">
+                    <div class="col-md-3">
                         <div id="sidebar">
                             <div class="inner">
                                 <h2><span><?php echo e(APP_NAME) ?></span></h2>
@@ -53,7 +54,7 @@ function e($dirty) {
                             </div>
                         </div>
                     </div>
-                    <div class="span9">
+                    <div class="col-md-9">
                         <div id="content">
                             <div class="inner">
                                 <?php echo $content; ?>

@@ -1,17 +1,17 @@
 <div class="breadcrumbs">    
     <div class="pull-right">
         <?php if ($html && isset($source)): ?>
-            <a href="javascript:;" class="btn btn-mini btn-inverse" id="toggle">Toggle source</a>
+            <a href="javascript:;" class="btn btn-xs btn-primary" id="toggle">Toggle source</a>
         <?php endif ?>
         <?php if ($use_pastebin): ?>
-            <a href="javascript:;" class="btn btn-mini btn-inverse" id="create-pastebin" title="Create public Paste on PasteBin">Create public Paste</a>
+            <a href="javascript:;" class="btn btn-xs btn-primary" id="create-pastebin" title="Create public Paste on PasteBin">Create public Paste</a>
         <?php endif; ?>
     </div>    
 
     <?php $path = array(); ?>
-    <ul class="unstyled">
+    <ul class="list-unstyled">
         <li>
-            <a href="<?php echo BASE_URL; ?>"><i class="icon-home icon-white"></i> /wiki</a>
+            <a href="<?php echo BASE_URL; ?>"><i class="fa fa-home"></i> /wiki</a>
         </li>
         <?php $i = 0; ?>
 
@@ -21,9 +21,9 @@
             <li>
                 <a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8') ?>">
                     <?php if (++$i == count($parts) && !$is_dir): ?>
-                        <i class="icon-file icon-white"></i>
+                        <i class="fa fa-file"></i>
                     <?php else: ?>
-                        <i class="icon-folder-open icon-white"></i>
+                        <i class="fa fa-folder-open"></i>
                     <?php endif ?>
                     <?php echo $part; ?>
                 </a>
@@ -64,11 +64,11 @@
 
         <form method="POST" action="<?php echo BASE_URL . "/?a=edit" ?>">
             <input type="hidden" name="ref" value="<?php echo base64_encode($page['file']) ?>">
-            <textarea id="editor" name="source" class="input-block-level" rows="<?php echo substr_count($source, "\n") + 1; ?>"><?php echo $source; ?></textarea>
+            <textarea id="editor" name="source" class="form-control" rows="<?php echo substr_count($source, "\n") + 1; ?>"><?php echo $source; ?></textarea>
 
             <?php if (ENABLE_EDITING): ?>
                 <div class="form-actions">
-                    <input type="submit" class="btn btn-inverse" value="Save Changes">
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
                 </div>
             <?php endif ?>
         </form>

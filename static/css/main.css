@@ -64,6 +64,7 @@ form {
     margin: 20px -20px -20px -20px;
     border-radius: 0 0 4px 4px;
     text-align: right;
+    padding: 0 20px 20px;
 }
 #sidebar {
     padding: 3px;
@@ -214,6 +215,9 @@ form {
 #logo:hover .bubble {
     bottom: 40px;
 }
+#tree-filter {
+    padding-bottom: 10px;
+}
 #tree-filter-query {
     display: block;
     -moz-box-sizing: border-box;
@@ -232,8 +236,8 @@ form {
 }
 #tree-filter-clear-query {
     float: right;
-    margin-top: -35px;
-    margin-right: 5px;
+    margin-top: -24px;
+    margin-right: 8px;
     cursor: pointer;
 }
 #tree-filter-results li a:focus:before,
