@@ -179,7 +179,10 @@ form {
     line-height: 30px;
 }
 .breadcrumbs li a {
-    margin-right: 15px;
+    margin: 0 5px;
+}
+.breadcrumbs li:first-child a {
+    margin-left: 0px;
 }
 .breadcrumbs li a:hover {
     text-decoration: underline;

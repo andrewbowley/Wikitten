@@ -10,24 +10,13 @@
 
     <?php $path = array(); ?>
     <ul class="list-unstyled">
-        <li>
-            <a href="<?php echo BASE_URL; ?>"><i class="fa fa-home"></i> /wiki</a>
-        </li>
+        <li><a href="<?php echo BASE_URL; ?>">home</a></li>
         <?php $i = 0; ?>
 
         <?php foreach ($parts as $part): ?>
             <?php $path[] = $part; ?>
             <?php $url = BASE_URL . "/" . join("/", $path) ?>
-            <li>
-                <a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8') ?>">
-                    <?php if (++$i == count($parts) && !$is_dir): ?>
-                        <i class="fa fa-file"></i>
-                    <?php else: ?>
-                        <i class="fa fa-folder-open"></i>
-                    <?php endif ?>
-                    <?php echo $part; ?>
-                </a>
-            </li>
+            <li>/<a href="<?php echo htmlspecialchars($url, ENT_QUOTES, 'UTF-8') ?>"><?php echo $part; ?></a></li>
         <?php endforeach ?>
     </ul>
     <div class="clear"></div>
